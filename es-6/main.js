@@ -13,8 +13,7 @@ const persona = {
     nome: "Jane",
     occupazione: "sviluppatrice"
 };
-const {nome, occupazione} = persona;
-const presentati = () => {
+const presentati = ({nome, occupazione}) => {
     console.log(`Ciao, sono ${nome} e sono una ${occupazione}`);
 }
 presentati(persona);
