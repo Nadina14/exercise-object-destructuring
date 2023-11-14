@@ -22,24 +22,30 @@ per ogni utente.
         "email": "charlie@example.com",
         "address": "456 Via Olmo, Sognilandia"
     }
-]
-### BONUS 3: Distrutturazione ed Elaborazione dei Dati JSON
-
-Hai ricevuto una stringa JSON contenente un array di prodotti con i loro prezzi e quantità. Scrivi una funzione che analizza il JSON e calcola il valore totale di ogni prodotto (prezzo moltiplicato per la quantità). Utilizza la distrutturazione degli oggetti per estrarre le proprietà necessarie. Quindi, registra il nome del prodotto e il suo valore totale.
-[
-    {
-        "product": "Laptop",
-        "price": 1200,
-        "quantity": 5
-    },
-    {
-        "product": "Telefono",
-        "price": 500,
-        "quantity": 10
-    },
-    {
-        "product": "Tablet",
-        "price": 750,
-        "quantity": 3
-    }
 ] */
+
+const persons = [
+    {
+        "name": "Alice",
+        "email": "alice@example.com",
+        "address": "123 Via Acero, Meraviglia"
+    },
+    {
+        "name": "Bob",
+        "email": "bob@example.com"
+    },
+    {
+        "name": "Charlie",
+        "email": "charlie@example.com",
+        "address": "456 Via Olmo, Sognilandia"
+    }
+];
+
+const analizza = (people) => {
+    for (let i = 0; i < people.length; i++) {
+        const person = people[i];
+        const { name, email, address = "Indirizzo non fornito" } = person;
+        console.log(`Ciao sono ${name}, la mia mail é ${email} e abito in ${address}`);
+    }
+}
+analizza(persons);
