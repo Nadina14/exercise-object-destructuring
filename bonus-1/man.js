@@ -41,3 +41,50 @@ dell'autore, e il numero di pagine se il libro ne ha più di 300.
         }
     }
 ] */
+
+
+const dataBase = [
+    {
+        "title": "Il Grande Gatsby",
+        "author": {
+            "firstName": "F. Scott",
+            "lastName": "Fitzgerald"
+        },
+        "details": {
+            "pages": 180,
+            "language": "Inglese"
+        }
+    },
+    {
+        "title": "Guerra e Pace",
+        "author": {
+            "firstName": "Lev",
+            "lastName": "Tolstoj"
+        },
+        "details": {
+            "pages": 1225,
+            "language": "Russo"
+        }
+    },
+    {
+        "title": "1984",
+        "author": {
+            "firstName": "George",
+            "lastName": "Orwell"
+        },
+        "details": {
+            "pages": 328,
+            "language": "Inglese"
+        }
+    }
+];
+
+for(let i = 0; i < dataBase.length; i++){
+    const libro = dataBase[i];
+    const {title, author, details} = libro;
+    const {firstName, lastName} = author;
+    const {pages} = details;
+    console.log(`${title}
+    ${firstName} ${lastName}
+    ${(pages > 300) ? pages : ''}`);
+}
